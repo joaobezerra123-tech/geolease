@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEOLASE - Análise Geográfica</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <div>
+            <h1>GEOLASE</h1>
+            <p>Gestão e análise espacial de imóveis</p>
+        </div>
+        <span id="status-api" class="status">Verificando API...</span>
+    </header>
+
+    <main class="conteudo">
+        <section class="introducao">
+            <h2>Painel de análise geográfica</h2>
+            <p>
+                Consulte os imóveis cadastrados e visualize os agrupamentos
+                identificados pelo algoritmo DBSCAN.
+            </p>
+            <button id="btn-analisar">Executar análise DBSCAN</button>
+            <p id="mensagem" role="status"></p>
+        </section>
+
+        <section class="resumo">
+            <article class="cartao">
+                <span>Total de imóveis</span>
+                <strong id="total-imoveis">—</strong>
+            </article>
+            <article class="cartao">
+                <span>Grupos encontrados</span>
+                <strong id="total-grupos">—</strong>
+            </article>
+            <article class="cartao">
+                <span>Imóveis classificados como ruído</span>
+                <strong id="total-ruidos">—</strong>
+            </article>
+        </section>
+
+        <section class="painel">
+            <div class="titulo-painel">
+                <div>
+                    <h2>Imóveis cadastrados</h2>
+                    <p>Dados carregados do banco de dados.</p>
+                </div>
+                <label for="filtro-grupo">Filtrar por grupo</label>
+                <select id="filtro-grupo">
+                    <option value="todos">Todos os grupos</option>
+                </select>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Imóvel</th>
+                            <th>Parque</th>
+                            <th>Área (ha)</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Grupo DBSCAN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-imoveis">
+                        <tr>
+                            <td colspan="7">Carregando imóveis...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>GEOLASE — Projeto acadêmico de análise geográfica</p>
+    </footer>
+</body>
+</html>
