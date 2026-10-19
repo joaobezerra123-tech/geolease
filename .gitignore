@@ -1,0 +1,20 @@
+
+# Ambiente virtual Python
+Backend/.venv/
+Backend/.venv*/
+Backend/venv/
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+
+# Configurações e credenciais locais
+.env
+Backend/.env
+
+# Testes e cache
+.pytest_cache/
+.coverage
+
+# Configurações locais do editor
+.vscode/
